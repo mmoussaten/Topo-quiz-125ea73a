@@ -1,21 +1,29 @@
 <?php
 
-$antwoord = array(Japan => Tokyo,
-Mexico => MexicoCity,
-USA => Washington,
-India => NewDelhi,
-Zuid-Korea => Seoul,
-China => Peking,
-Nigeria => Abuja,
-Argentina => BuenosAires,
-Egypt => Cairo,
-uk => London,);
-{
-    echo "heb je zin in een leuke topo quizzz :)\n ";
-    $ja = readline();
-    {
-        echo "leuk dat je mee doet laten we beginnen ! \n ";
+$punten = 0;
+$quiz = array('Japan' => "Tokyo",
+    'Mexico' => "Mexico City",
+    'USA' => "New York City",
+    'India' => "Mumbai",
+    'Korea' => "Seoul",
+    'China' => "Shanghai",
+    'Nigeria' => "Lagos",
+    'Argentina' => "Buenos Aires",
+    'Egypt' => "Caira",
+    'UK' => "London");
 
+        echo "laten we beginnen aan een toffe Quiz \n";
+        readline();
+
+foreach ($quiz as $key => $value) {
+    echo "Wat is de hoofdstad van " . $key . PHP_EOL;
+    $antwoord = readline();
+    if ($antwoord == $value) {
+        echo "Correct!" . PHP_EOL;
+        $punten++;
     }
-    foreach ($antwoord as $landen => $hoofdstad) ; 
+    else{
+        echo "Helaas, Het correcte antwoord is: " . $value . PHP_EOL;
+    }
 }
+echo "Je hebt " . $punten . "van de 10 goed geraden!";
